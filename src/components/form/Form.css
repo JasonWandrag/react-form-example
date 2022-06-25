@@ -1,0 +1,173 @@
+label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: var(--cloudyBlue) !important;
+}
+
+.form {
+  padding: var(--containerPadding);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.input-group input:not([type="radio"]) {
+  width: 70%;
+  border: 2px solid white;
+  outline: none;
+  background-color: var(--paleGrey);
+  padding: 20px;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.radio-group-container {
+  width: 70%;
+  padding-inline: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radio-image-wrapper {
+  border-radius: 50%;
+  width: 50px;
+  aspect-ratio: 1;
+  background-color: var(--paleGrey);
+  display: inline-grid;
+  place-content: center;
+  margin-right: 10px;
+  transition: background-color 0.3s linear;
+}
+
+input[type="radio"]:checked + label .radio-image-wrapper {
+  background-color: var(--cloudyBlue);
+}
+
+svg,
+svg * {
+  transition: all 0.3s linear;
+}
+
+input[type="radio"]:checked + label .radio-image-wrapper svg,
+input[type="radio"]:checked + label .radio-image-wrapper svg * {
+  stroke: white;
+}
+
+input[name="gender"]:checked + label .radio-image-wrapper svg path {
+  fill: white;
+}
+
+input:focus:not([type="radio"]) ~ label,
+input:focus:not([type="radio"]) {
+  position: relative;
+  color: var(--tangerine);
+}
+input:focus:not([type="radio"]) {
+  border: 2px solid var(--tangerine);
+}
+
+input:focus:not([type="radio"]) ~ label:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  aspect-ratio: 1;
+  background-color: var(--tangerine);
+  border-radius: 50%;
+  right: 105%;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.form-button {
+  padding: 16px 48px;
+  background-color: var(--paleGrey);
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  color: var(--charcoalGrey);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+
+.form-button:hover {
+  background-color: var(--cloudyBlue);
+  color: white;
+}
+
+.form-button[type="submit"] {
+  background-color: var(--blueGreen);
+  color: white;
+  transition: background-color 0.3s linear;
+}
+
+.form-button[type="submit"]:hover {
+  background-color: var(--charcoalGrey);
+}
+
+::-webkit-calendar-picker-indicator {
+  display: none;
+}
+input[type="date"] {
+  position: relative;
+  color: var(--cloudyBlue);
+}
+input[type="date"]::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  width: 20px;
+  aspect-ratio: 1;
+  background-image: url(../../assets/calendar.svg);
+  background-size: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .input-group {
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .input-group input:not([type="radio"]),
+  .radio-group-container {
+    width: 100%;
+  }
+
+  .form-footer {
+    flex-direction: column;
+  }
+}
