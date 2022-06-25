@@ -13,6 +13,7 @@
   justify-content: center;
   gap: 40px;
   color: var(--charcoalGrey);
+  z-index: 2;
 }
 
 .information.active {

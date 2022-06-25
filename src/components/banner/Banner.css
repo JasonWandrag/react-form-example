@@ -42,7 +42,7 @@
 @media screen and (max-width: 768px) {
   .banner {
     width: 100%;
-    /* min-height: 100vh; */
+    min-height: 100vh;
   }
   .toggleButton {
     transform: rotate(-270deg);
